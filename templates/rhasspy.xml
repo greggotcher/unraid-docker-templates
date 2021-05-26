@@ -7,7 +7,7 @@
   <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support></Support>
-  <Project>hhttps://github.com/rhasspy/rhasspy</Project>
+  <Project>https://github.com/rhasspy/rhasspy</Project>
   <Overview></Overview>
   <Category>Productivity:</Category>
   <WebUI>http://[IP]:[PORT:12101]</WebUI>
