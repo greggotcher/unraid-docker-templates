@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>rhasspy</Name>
+  <Repository>rhasspy/rhasspy</Repository>
+  <Registry>https://hub.docker.com/r/rhasspy/rhasspy</Registry>
+  <Network>bridge</Network>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>hhttps://github.com/rhasspy/rhasspy</Project>
+  <Overview></Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:12101]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Tooa/rhasspy-unraid/master/templates/rhasspy.xml</TemplateURL>
+  <Icon>https://github.com/rhasspy/rhasspy/raw/master/docs/img/rhasspy-icon.png</Icon>
+  <PostArgs>--user-profiles /profiles --profile en</PostArgs>
+  <Description></Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>12101</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort/>
+        <ContainerPort>12333</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/profiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+  </Environment>
+  <Labels/>
+  <Config Name="Port" Target="12101" Default="12101" Mode="tcp" Description="Container Port: 12101" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Port" Target="12333" Default="12333" Mode="udp" Description="Container Port: 12333" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="Profiles" Target="/profiles" Default="" Mode="rw" Description="Container Path: /profiles . &#13;&#10;Location for profiles" Type="Path" Display="always" Required="false" Mask="false"/>
+  <Config Name="PUID" Target="USERMAP_UID" Default="99" Mode="" Description="Container Variable: USERMAP_UID" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+</Container>
